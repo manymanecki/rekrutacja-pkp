@@ -1,5 +1,4 @@
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.net.URL;
 import java.util.Locale;
 import java.util.Scanner;
@@ -7,12 +6,9 @@ import java.util.Scanner;
 public class Kanye {
     public static void main(String[] args) throws IOException {
         System.setProperty("http.agent", "Netscape 1.0");
-
         URL kanyePage = new URL("https://api.kanye.rest/text");
-        InputStreamReader reader = new InputStreamReader(kanyePage.openStream());
-        String quote = reader.toString();
-        System.out.println(quote);
-
+        StringBuffer stringBuffer;
+        Scanner scanner;
         String choice;
         Scanner keyboard = new Scanner(System.in);
 
@@ -22,11 +18,15 @@ public class Kanye {
             if (choice.matches("exit"))
                 break;
             if (choice.equals("next")) {
-                System.out.println("here we should have kanyes quote");
+                stringBuffer = new StringBuffer();
+                scanner = new Scanner(kanyePage.openStream());
+                while (scanner.hasNext())
+                    stringBuffer.append(scanner.nextLine());
+                System.out.println(stringBuffer);
             } else {
-                System.out.println("noooo you have to choose something");
+                System.out.println("You have to choose something...");
             }
         } while (!choice.equals("exit"));
-        System.out.println("can we get much higher?");
+        System.out.println("Can we get much higher?");
     }
 }
