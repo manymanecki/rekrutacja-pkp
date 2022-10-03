@@ -14,3 +14,6 @@ Mając to na uwadze:
 ### Zadanie 2: Podaj szacowaną złożoność obliczeniową oraz pamięciową.
 - Szacowana zlozonosc obliczeniowa: O(logN)
 - Szacowana zlozonosc pamieciowa: O(1)
+
+### Zadanie 3: Dla chętnych, za dodatkowe punkty: dodaj zapisywanie cytatów w pamięci, by upewnić się, że każdy kolejny cytat jest nowy.
+Zabraklo mi czasu na zapisywanie cytatow ale sam program dziala fantastycznie ;)
